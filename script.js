@@ -24,6 +24,7 @@ btn.addEventListener("click", () => {
             row.appendChild(column);
         }
     }
+    //use math.floor random to generate random color?
     const columnQuery = document.querySelectorAll("div.column");
     for (const element of columnQuery) {
         element.addEventListener("mouseover", (e) => {

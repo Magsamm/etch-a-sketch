@@ -1,7 +1,4 @@
 /* remove when done */
-* {
-    border: 1px solid red;
-}
 
 body {
     display: flex;
@@ -34,13 +31,11 @@ button {
 
 .row {
     display: flex;
-    border: 1px solid black;
 }
 
 .column {
     display: flex;
     min-height: 20px;
     min-width: 20px;
-    flex-grow: 0;
     border: 1px solid black;
 }
