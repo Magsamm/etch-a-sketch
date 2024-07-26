@@ -14,19 +14,19 @@ document.body.appendChild(btn);
 btn.addEventListener("click", () => {
     //change to 16x16 after testing
     //use nested loop to create rows and columns?
-    for (let i = 0; i < 128; i++) {
+    for (let i = 0; i < 16; i++) {
         const row = document.createElement("div");
         row.classList.add("row");
         container.appendChild(row);
-        for (let j = 0; j < 128; j++) {
-            const column = document.createElement("div");
-            column.classList.add("column");
-            row.appendChild(column);
+        for (let j = 0; j < 16; j++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            row.appendChild(cell);
         }
     }
     //use math.floor random to generate random color?
-    const cell = document.querySelectorAll("div.column");
-    for (const element of cell) {
+    const cellColor = document.querySelectorAll("div.cell");
+    for (const element of cellColor) {
         element.addEventListener("mouseover", (e) => {
             e.target.style.background = "blue";
         });
