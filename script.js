@@ -18,22 +18,12 @@ function getHumanChoice() {
     gridValue += userInput;
     return userInput;
 }
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
 
 //add click event for button to create a grid of divs
 //change this button to send a prompt
 //make sure it uses the same number of pixels regardless of grid size specified
 btn.addEventListener("click", () => {
-    const removeChildsContainer = document.querySelector(".container");
-    removeAllChildNodes(removeChildsContainer);
-
-    //remember to wipe existing grid when user inputs grid
-    container.textContent = "";
-
+    container.replaceChildren();
     getHumanChoice();
 
     for (let i = 0; i < gridValue; i++) {
