@@ -23,6 +23,9 @@ function getHumanChoice() {
 //change this button to send a prompt
 //make sure it uses the same number of pixels regardless of grid size specified
 btn.addEventListener("click", () => {
+    //reset value of grid
+    //remove childnodes from container
+    gridValue = 0;
     container.replaceChildren();
     getHumanChoice();
 
