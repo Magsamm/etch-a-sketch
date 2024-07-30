@@ -1,9 +1,8 @@
-const container = document.querySelector(".container");
-
 const btn = document.createElement("button");
 btn.setAttribute("id", "btn");
-btn.textContent = "Enter number of cells you want for the grid";
+btn.textContent = "Grid size";
 document.body.appendChild(btn);
+const container = document.querySelector(".container");
 
 //store input from user to use in the click event to generate a grid of x squares
 let gridValue = 0;
@@ -13,7 +12,7 @@ function getHumanChoice() {
     //run loop until user inputs a valid choice.
     while (userInput < 1 || userInput > 100)
         userInput = parseInt(
-            prompt("Please enter a number thats more than 1 and lower than 100")
+            prompt("Please enter a number thats more than 0 and less than 100")
         );
     gridValue += userInput;
     return userInput;
@@ -35,11 +34,12 @@ btn.addEventListener("click", () => {
         for (let j = 0; j < gridValue; j++) {
             const cell = document.createElement("div");
             cell.classList.add("cell");
+            cell.style.width = ` ${500 / gridValue}px`;
+            cell.style.height = `${500 / gridValue}px`;
             row.appendChild(cell);
             container.appendChild(row);
         }
     }
-
     //use math.floor random to generate random color?
     const cellColor = document.querySelectorAll("div.cell");
     for (const element of cellColor) {
@@ -48,5 +48,3 @@ btn.addEventListener("click", () => {
         });
     }
 });
-
-//try using a foreach and loop over
