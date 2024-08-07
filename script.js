@@ -11,9 +11,7 @@ function getHumanChoice() {
     userInput = parseInt(prompt("Enter a number between 1 and 100"));
     //run loop until user inputs a valid choice.
     while (userInput < 1 || userInput > 100)
-        userInput = parseInt(
-            prompt("Please enter a number thats more than 0 and less than 100")
-        );
+        userInput = parseInt(prompt("Please enter a number thats more than 0 and less than 100"));
     gridValue += userInput;
     return userInput;
 }
@@ -34,7 +32,7 @@ btn.addEventListener("click", () => {
         for (let j = 0; j < gridValue; j++) {
             const cell = document.createElement("div");
             cell.classList.add("cell");
-            cell.style.width = ` ${500 / gridValue}px`;
+            cell.style.width = `${500 / gridValue}px`;
             cell.style.height = `${500 / gridValue}px`;
             row.appendChild(cell);
             container.appendChild(row);
